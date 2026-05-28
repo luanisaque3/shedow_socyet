@@ -1,11 +1,12 @@
 <div align="center">
 
-# ⌨️ TECLADO VIRTUAL
+# ⌨️ TECLADO VIRTUAL 1.1.0
 
 [![Python 3.7+](https://img.shields.io/badge/Python-3.7%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![Stars](https://img.shields.io/badge/Made%20with-%E2%9D%A4-red)](https://github.com/luanisaque3)
-[![Status](https://img.shields.io/badge/Status-Ativo-brightgreen)](https://github.com/luanisaque3/shedow_socyet)
+[![Status](https://img.shields.io/badge/Status-Ativo-brightgreen)](https://github.com/luanisaque3/TECLADO_virtual_110.0)
+[![Version](https://img.shields.io/badge/Version-1.1.0-blue)](#)
 
 > 🚀 **Emulador de Teclado Virtual avançado e colorido para Python**
 > 
@@ -35,8 +36,8 @@
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/luanisaque3/shedow_socyet.git
-cd shedow_socyet
+git clone https://github.com/luanisaque3/TECLADO_virtual_110.0.git
+cd TECLADO_virtual_110.0
 
 # 2. Instale as dependências
 pip install -r requirements.txt
@@ -120,8 +121,8 @@ A interface é super colorida e intuitiva:
 
 ```
 ╔═══════════════════════════════════════════════════════════════╗
-║          ⌨️  EMULADOR DE TECLADO VIRTUAL ⌨️                  ║
-║                    🚀 v1.0.0 Premium 🚀                       ║
+║          ⌨️  EMULADOR DE TECLADO VIRTUAL  ⌨️                  ║
+║                    🚀 v1.1.0 Premium 🚀                       ║
 ║                  Criado por: Plascoy ❤️                       ║
 ╚═══════════════════════════════════════════════════════════════╝
 
@@ -168,7 +169,7 @@ Feito com ❤️ e Python
 
 <div align="center">
 
-**[⬆ Voltar ao topo](#teclado-virtual)**
+**[⬆ Voltar ao topo](#teclado-virtual-110)**
 
 Se gostou, não se esqueça de dar uma ⭐!
 
